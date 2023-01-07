@@ -5,6 +5,7 @@ from cart.cart import Cart
 
 def product_list(request):
     cart = Cart(request)
+    #cart = Cart()
     products = Product.objects.filter(available=True)
     return render(request, 'list.html', {'products': products, 'cart': cart})
 
