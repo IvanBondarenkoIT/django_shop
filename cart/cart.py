@@ -70,4 +70,4 @@ class Cart:
         """
         Count all items in the cart.
         """
-        return sum(item['quality'] for item in self.cart.values())
+        return sum(item['quantity'] for item in self.cart.values())
