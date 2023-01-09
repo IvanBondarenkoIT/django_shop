@@ -5,11 +5,10 @@ from cart.cart import Cart
 
 def product_list(request):
     cart = Cart(request)
-    #cart = Cart()
     products = Product.objects.filter(available=True)
     return render(request, 'list.html', {'products': products, 'cart': cart})
 
 
-def product_detail(request, id, slug):
+def product_details(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    return render(request, '', {'product': product})
+    return render(request, 'product_details.html', {'product': product})
